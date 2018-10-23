@@ -2,6 +2,7 @@ package harry.SpringBoot.actuator.custom.security.configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
@@ -13,7 +14,7 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
  */
 @Configuration
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
-	@Bean
+	/*@Bean
 	public InMemoryUserDetailsManager inMemoryUserDetailsManager() {
 		return new InMemoryUserDetailsManager(User.withDefaultPasswordEncoder()
 				.username("user").password("password").authorities("ROLE_USER")
@@ -22,5 +23,5 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 				.withDefaultPasswordEncoder().username("admin")
 				.password("admin").authorities("ROLE_ACTUATOR", "ROLE_USER")
 				.build());
-	}
+	}*/
 }

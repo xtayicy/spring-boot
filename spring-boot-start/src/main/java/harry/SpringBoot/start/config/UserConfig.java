@@ -15,7 +15,6 @@ import org.springframework.context.annotation.Configuration;
 public class UserConfig {
 	@Bean
 	public User user(){
-		
 		return new User("tom","pwd");
 	}
 	
