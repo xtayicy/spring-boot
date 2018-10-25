@@ -17,6 +17,8 @@
 		<module>spring-boot-ActiveMQ</module>
 		<module>spring-boot-actuator-custom-security</module>
 		<module>spring-boot-web</module>
+		<module>spring-boot-animated-banner</module>
+		<module>spring-boot-ant</module>
 	</modules>
 
 	<properties>
