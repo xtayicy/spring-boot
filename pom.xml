@@ -23,7 +23,6 @@
 		<module>spring-boot-cache</module>
 		<module>spring-boot-actuator</module>
 		<module>spring-boot-actuator-ui</module>
-		<module>spring-boot-actuator-log4j2</module>
 	</modules>
 
 	<properties>
