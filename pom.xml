@@ -20,6 +20,8 @@
 		<module>spring-boot-animated-banner</module>
 		<module>spring-boot-ant</module>
 		<module>spring-boot-aop</module>
+		<module>spring-boot-cache</module>
+		<module>spring-boot-actuator</module>
 	</modules>
 
 	<properties>
