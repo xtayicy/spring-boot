@@ -19,6 +19,7 @@
 		<module>spring-boot-web</module>
 		<module>spring-boot-animated-banner</module>
 		<module>spring-boot-ant</module>
+		<module>spring-boot-aop</module>
 	</modules>
 
 	<properties>
