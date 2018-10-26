@@ -22,6 +22,7 @@
 		<module>spring-boot-aop</module>
 		<module>spring-boot-cache</module>
 		<module>spring-boot-actuator</module>
+		<module>spring-boot-actuator-ui</module>
 	</modules>
 
 	<properties>
