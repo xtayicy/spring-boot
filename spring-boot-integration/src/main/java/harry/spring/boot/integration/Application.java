@@ -32,7 +32,6 @@ public class Application {
 
 	@Bean
 	public FileReadingMessageSource fileReader() {
-		System.out.println("Application->fileReader");
 		FileReadingMessageSource reader = new FileReadingMessageSource();
 		reader.setDirectory(new File("target/input"));
 
@@ -41,19 +40,16 @@ public class Application {
 
 	@Bean
 	public DirectChannel inputChannel() {
-		System.out.println("Application->inputChannel");
 		return new DirectChannel();
 	}
 
 	@Bean
 	public DirectChannel outputChannel() {
-		System.out.println("Application->outputChannel");
 		return new DirectChannel();
 	}
 
 	@Bean
 	public FileWritingMessageHandler fileWriter() {
-		System.out.println("Application->fileWriter");
 		FileWritingMessageHandler writer = new FileWritingMessageHandler(
 				new File("target/output"));
 		writer.setExpectReply(false);
@@ -63,7 +59,6 @@ public class Application {
 
 	@Bean
 	public IntegrationFlow integrationFlow(HelloEndpoint endpoint) {
-		System.out.println("Application->integrationFlow");
 		return IntegrationFlows.from(fileReader(), e -> e.poller(Pollers.fixedRate(500)))
 				.channel(inputChannel()).handle(endpoint)
 				.channel(outputChannel()).handle(fileWriter()).get();
