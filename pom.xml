@@ -25,6 +25,7 @@
 		<module>spring-boot-data-jpa</module>
 		<module>spring-boot-data-redis</module>
 		<module>spring-boot-data-rest</module>
+		<module>spring-boot-devtools</module>
 	</modules>
 
 	<properties>
@@ -44,6 +45,11 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
 		</dependency>
 	</dependencies>
 
