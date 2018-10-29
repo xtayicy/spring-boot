@@ -26,6 +26,7 @@
 		<module>spring-boot-data-redis</module>
 		<module>spring-boot-data-rest</module>
 		<module>spring-boot-devtools</module>
+		<module>spring-boot-integration</module>
 	</modules>
 
 	<properties>
@@ -63,6 +64,20 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
+	
+	<repositories>
+        <repository>
+            <id>spring-snapshots</id>
+            <url>http://repo.spring.io/libs-snapshot</url>
+        </repository>
+    </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>spring-snapshots</id>
+            <url>http://repo.spring.io/libs-snapshot</url>
+        </pluginRepository>
+    </pluginRepositories>
 
 	<build>
 		<pluginManagement>
@@ -73,6 +88,5 @@
 				</plugin>
 			</plugins>
 		</pluginManagement>
-
 	</build>
 </project>
