@@ -64,18 +64,8 @@ public class Application {
 	@Bean
 	public IntegrationFlow integrationFlow(HelloEndpoint endpoint) {
 		System.out.println("Application->integrationFlow");
-		return IntegrationFlows.from(fileReader(), new FixedRatePoller())
+		return IntegrationFlows.from(fileReader(), e -> e.poller(Pollers.fixedRate(500)))
 				.channel(inputChannel()).handle(endpoint)
 				.channel(outputChannel()).handle(fileWriter()).get();
-	}
-
-	private static class FixedRatePoller implements
-			Consumer<SourcePollingChannelAdapterSpec> {
-
-		@Override
-		public void accept(SourcePollingChannelAdapterSpec spec) {
-			System.out.println("Application->accept");
-			spec.poller(Pollers.fixedRate(500));
-		}
 	}
 }
