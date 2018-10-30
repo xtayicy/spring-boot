@@ -26,7 +26,6 @@
 		<module>spring-boot-data-redis</module>
 		<module>spring-boot-data-rest</module>
 		<module>spring-boot-devtools</module>
-		<module>spring-boot-integration</module>
 	</modules>
 
 	<properties>
