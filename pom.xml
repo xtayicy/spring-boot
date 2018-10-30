@@ -14,7 +14,6 @@
 
 	<modules>
 		<module>spring-boot-start</module>
-		<module>spring-boot-ActiveMQ</module>
 		<module>spring-boot-actuator-custom-security</module>
 		<module>spring-boot-web</module>
 		<module>spring-boot-ant</module>
