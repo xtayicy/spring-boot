@@ -18,12 +18,12 @@ public class UserConfig {
 		return new User("tom","pwd");
 	}
 	
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext();
 		ctx.register(UserConfig.class);
 		ctx.refresh();
 		User user = ctx.getBean(User.class);
 		System.out.println(user);
 		ctx.close();
-	}
+	}*/
 }
