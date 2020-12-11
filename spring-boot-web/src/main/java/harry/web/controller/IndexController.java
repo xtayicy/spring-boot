@@ -1,6 +1,7 @@
 package harry.web.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -33,5 +34,11 @@ public class IndexController {
 	public String users(){
 		
 		return userService.getAllUsers().toString();
+	}
+	
+	@RequestMapping("/user/{username}")
+	public String queryUserByUsername(@PathVariable String username){
+		
+		return username;
 	}
 }
