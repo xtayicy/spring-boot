@@ -28,6 +28,7 @@
 		<module>spring-boot-devtools</module>
 		<module>spring-boot-json</module>
 		<module>spring-boot-test</module>
+		<module>spring-boot-plugin</module>
 	</modules>
 
 	<properties>
