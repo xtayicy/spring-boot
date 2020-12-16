@@ -1,4 +1,4 @@
-package harry.spring.boot.jpa;
+package harry.spring.boot.jpa.controller;
 
 import harry.spring.boot.jpa.entity.Note;
 import harry.spring.boot.jpa.repository.NoteRepository;

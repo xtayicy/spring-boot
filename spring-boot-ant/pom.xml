@@ -10,17 +10,21 @@
 	</parent>
 
 	<artifactId>spring-boot-ant</artifactId>
+	
+	<properties>
+		<org.springframework.boot.antlib.version>2.0.5.RELEASE</org.springframework.boot.antlib.version>
+	</properties>
 
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
 		</dependency>
-
-		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-antlib -->
+		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-antlib</artifactId>
+			<version>${org.springframework.boot.antlib.version}</version>
 		</dependency>
 	</dependencies>
 </project>

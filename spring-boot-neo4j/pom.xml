@@ -1,0 +1,59 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>harry</groupId>
+		<artifactId>spring-boot</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>spring-boot-neo4j</artifactId>
+
+	<properties>
+		<org.springframework.data.deo4j.version>3.4.6.RELEASE</org.springframework.data.deo4j.version>
+		<org.neo4j.cypher.dsl.version>1.7</org.neo4j.cypher.dsl.version>
+		<org.neo4j.driver.java.version>4.1.1</org.neo4j.driver.java.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-neo4j</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-neo4j</artifactId>
+			<version>6.0.2</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.neo4j.driver/neo4j-java-driver -->
+		<dependency>
+			<groupId>org.neo4j.driver</groupId>
+			<artifactId>neo4j-java-driver</artifactId>
+			<version>${org.neo4j.driver.java.version}</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.neo4j/neo4j-cypher-dsl -->
+		<dependency>
+			<groupId>org.neo4j</groupId>
+			<artifactId>neo4j-cypher-dsl</artifactId>
+			<version>${org.neo4j.cypher.dsl.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.neo4j</groupId>
+			<artifactId>neo4j-ogm-embedded-driver</artifactId>
+			<version>3.2.18</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-bom</artifactId>
+			<version>2020.0.2</version>
+			<scope>import</scope>
+			<type>pom</type>
+		</dependency>
+	</dependencies>
+</project>

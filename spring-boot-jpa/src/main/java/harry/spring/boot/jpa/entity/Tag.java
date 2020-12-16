@@ -48,4 +48,9 @@ public class Tag {
 	public void setNotes(List<Note> notes) {
 		this.notes = notes;
 	}
+
+	@Override
+	public String toString() {
+		return "Tag [id=" + id + ", name=" + name + "]";
+	}
 }

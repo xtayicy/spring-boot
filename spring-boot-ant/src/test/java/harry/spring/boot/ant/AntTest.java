@@ -31,8 +31,7 @@ public class AntTest {
 		
 		assertThat(jarFiles).hasSize(1);
 		
-		Process process = new JavaExecutable()
-		.processBuilder("-jar", jarFiles[0].getName()).directory(target).start();
+		Process process = new JavaExecutable().processBuilder("-jar", jarFiles[0].getName()).directory(target).start();
 		process.waitFor(5, TimeUnit.MINUTES);
 		
 		assertThat(process.exitValue()).isEqualTo(0);
