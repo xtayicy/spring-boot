@@ -1,10 +1,9 @@
 package harry.SpringBoot.start.config;
 
-import harry.SpringBoot.start.entity.User;
-
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+
+import harry.SpringBoot.start.entity.User;
 
 /**
  * 

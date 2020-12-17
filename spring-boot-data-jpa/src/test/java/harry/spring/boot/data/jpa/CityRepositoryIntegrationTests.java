@@ -23,7 +23,7 @@ public class CityRepositoryIntegrationTests {
 
 	@Autowired
 	CityRepository repository;
-
+	
 	@Test
 	public void findsFirstPageOfCities() {
 		Page<City> cities = this.repository.findAll(PageRequest.of(0, 10));
