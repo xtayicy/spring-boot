@@ -1,39 +1,97 @@
 package harry.spring.boot.neo4j.config;
 
-import org.neo4j.driver.AuthTokens;
-import org.neo4j.driver.Driver;
-import org.neo4j.driver.GraphDatabase;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.data.neo4j.config.AbstractNeo4jConfig;
-import org.springframework.data.neo4j.core.Neo4jClient;
-import org.springframework.data.neo4j.core.Neo4jTemplate;
-import org.springframework.data.neo4j.repository.config.EnableNeo4jRepositories;
 
 /**
  * 
  * @author Harry
  *
  */
-@Configuration
-@EnableNeo4jRepositories(basePackages = "harry.spring.boot.neo4j.repository")
+//@Configuration
+//@EnableNeo4jRepositories(basePackages = "harry.spring.boot.neo4j.repository")
 //@EnableTransactionManagement
-public class Neo4jConfig extends AbstractNeo4jConfig{
+//@ConfigurationProperties(prefix="jdbc")
+public class Neo4jConfig{
+	/*private String driver;
+	private String url;
+	private String username;
+	private String password;*/
 	
-	@Bean
-	public Neo4jTemplate neo4jTemplate(Driver driver){
+	/*@Bean
+	@Qualifier("dataSource")
+	public DataSource dataSource(){
+		BasicDataSource dataSource = new BasicDataSource();
+		dataSource.setDriverClassName(driver);
+		dataSource.setUrl(url);
+		dataSource.setUsername(username);
+		dataSource.setPassword(password);
 		
-		return new Neo4jTemplate(Neo4jClient.create(driver));
-	}
+		return dataSource;
+	}*/
 	
-	@Bean
-	public Driver driver() {
-		return GraphDatabase.driver("bolt://localhost:7687", AuthTokens.basic("neo4j", "password"));
-	}
+	/*@Bean
+	public SqlSessionFactory sqlSessionFactory() throws IOException{
+		SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(Resources.getResourceAsReader("Mybatis-config.xml"));
+		
+		return sqlSessionFactory;
+	}*/
+	
+	/*@Bean(name = "transactionManager")
+    public DataSourceTransactionManager testTransactionManager(DataSource dataSource) {
+        
+		return new DataSourceTransactionManager(dataSource);
+	}*/
 
 	/*@Override
 	@Bean
 	protected DatabaseSelectionProvider databaseSelectionProvider() {
 		return DatabaseSelectionProvider.createStaticDatabaseSelectionProvider("mysql");
+	}*/
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	/*public String getDriver() {
+		return driver;
+	}
+
+	public void setDriver(String driver) {
+		this.driver = driver;
+	}
+
+	public String getUrl() {
+		return url;
+	}
+
+	public void setUrl(String url) {
+		this.url = url;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}*/
 }

@@ -18,83 +18,35 @@
 		<org.neo4j.test.harness.version>3.5.23</org.neo4j.test.harness.version>
 		<org.neo4j.ogm.core.version>3.1.0</org.neo4j.ogm.core.version>
 		<org.mybatis.version>3.5.2</org.mybatis.version>
+		<org.mybatis.spring.version>2.0.6</org.mybatis.spring.version>
+		<org.acegisecurity.version>1.0.7</org.acegisecurity.version>
+		<commons.dbcp.version>1.4</commons.dbcp.version>
+		<org.mybatis.spring.boot.mybatis.spring.version>2.0.1</org.mybatis.spring.boot.mybatis.spring.version>
+		<org.neo4j.jdbc.driver.version>3.4.0</org.neo4j.jdbc.driver.version>
 	</properties>
 
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-neo4j</artifactId>
-		</dependency>
-		
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-jdbc</artifactId>
-		</dependency>
-		
-		<dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
-			<scope>runtime</scope>
+			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
 		<dependency>
-			<groupId>org.springframework.data</groupId>
-			<artifactId>spring-data-neo4j</artifactId>
-			<version>${org.springframework.data.deo4j.version}</version>
-		</dependency>
-
-		<!-- https://mvnrepository.com/artifact/org.neo4j.driver/neo4j-java-driver -->
-		<!-- <dependency>
-			<groupId>org.neo4j.driver</groupId>
-			<artifactId>neo4j-java-driver</artifactId>
-			<version>${org.neo4j.driver.java.version}</version>
-		</dependency> -->
-
-		<!-- https://mvnrepository.com/artifact/org.neo4j/neo4j-cypher-dsl -->
-		<!-- <dependency>
-			<groupId>org.neo4j</groupId>
-			<artifactId>neo4j-cypher-dsl</artifactId>
-			<version>${org.neo4j.cypher.dsl.version}</version>
-		</dependency> -->
-
-		<!-- <dependency>
-			<groupId>org.neo4j</groupId>
-			<artifactId>neo4j-ogm-embedded-driver</artifactId>
-			<version>${org.neo4j.driver.version}</version>
-		</dependency> -->
-
-		<!-- <dependency>
-			<groupId>org.springframework.data</groupId>
-			<artifactId>spring-data-bom</artifactId>
-			<version>${org.springframework.data.bom.version}</version>
-			<scope>import</scope>
-			<type>pom</type>
-		</dependency> -->
-
-		<!-- <dependency> <groupId>org.springframework.boot</groupId> <artifactId>spring-boot-starter-web</artifactId> 
-			</dependency> -->
-
-		<!-- <dependency>
-			<groupId>org.neo4j.test</groupId>
-			<artifactId>neo4j-harness</artifactId>
-			<version>${org.neo4j.test.harness.version}</version>
-			<scope>test</scope>
-		</dependency> -->
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+            <version>${org.mybatis.spring.boot.mybatis.spring.version}</version>
+        </dependency>
 
 		<dependency>
 			<groupId>org.neo4j</groupId>
-			<artifactId>neo4j-ogm-core</artifactId>
+			<artifactId>neo4j-jdbc-driver</artifactId>
+			<version>${org.neo4j.jdbc.driver.version}</version>
 		</dependency>
 
 		<dependency>
-			<groupId>org.mybatis</groupId>
-			<artifactId>mybatis</artifactId>
-			<version>${org.mybatis.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.neo4j</groupId>
-			<artifactId>neo4j-ogm-bolt-driver</artifactId>
+			<groupId>org.acegisecurity</groupId>
+			<artifactId>acegi-security</artifactId>
+			<version>${org.acegisecurity.version}</version>
 		</dependency>
 	</dependencies>
 </project>

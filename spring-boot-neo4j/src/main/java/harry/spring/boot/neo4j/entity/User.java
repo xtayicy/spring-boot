@@ -1,18 +1,11 @@
 package harry.spring.boot.neo4j.entity;
 
-import org.neo4j.ogm.annotation.Id;
-import org.neo4j.ogm.annotation.NodeEntity;
-
 /**
  * 
  * @author Harry
  *
  */
-@NodeEntity
 public class User{
-	@Id
-	private Long id;
-	
 	private String username;
 	private String password;
 
@@ -40,16 +33,8 @@ public class User{
 		this.password = password;
 	}
 	
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", username=" + username + ", password=" + password + "]";
+		return "User [username=" + username + ", password=" + password + "]";
 	}
 }

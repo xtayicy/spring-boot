@@ -1,7 +1,6 @@
 package harry.spring.boot.neo4j;
 
-import org.springframework.boot.ApplicationArguments;
-import org.springframework.boot.ApplicationRunner;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -10,14 +9,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @author Harry
  *
  */
+@MapperScan("harry.spring.boot.neo4j.mapper")
 @SpringBootApplication
-public class Application implements ApplicationRunner{
+public class Application{
 	public static void main(String[] args){
 		SpringApplication.run(Application.class, args);
-	}
-
-	@Override
-	public void run(ApplicationArguments args) throws Exception {
-		System.out.println("Application.run()");
 	}
 }
