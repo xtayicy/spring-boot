@@ -8,11 +8,4 @@
   
   <artifactId>spring-boot-devtools</artifactId>
   <packaging>jar</packaging>
-  
-  <dependencies>
-  	<dependency>
-  		<groupId>org.springframework.boot</groupId>
-  		<artifactId>spring-boot-devtools</artifactId>
-  	</dependency>
-  </dependencies>
 </project>
