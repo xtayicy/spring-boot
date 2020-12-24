@@ -33,6 +33,7 @@
 		<module>spring-boot-mongoDB</module>
 		<module>spring-boot-neo4j</module>
 		<module>spring-boot-solr</module>
+		<module>spring-boot-elasticsearch</module>
 	</modules>
 
 	<properties>
