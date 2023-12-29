@@ -34,6 +34,7 @@
 		<module>spring-boot-neo4j</module>
 		<module>spring-boot-solr</module>
 		<module>spring-boot-elasticsearch</module>
+		<module>spring-boot-spring-security</module>
 	</modules>
 
 	<properties>
