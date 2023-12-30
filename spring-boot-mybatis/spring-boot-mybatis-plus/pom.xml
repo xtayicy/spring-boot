@@ -5,13 +5,13 @@
     <artifactId>spring-boot-mybatis</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>spring-boot-mybatis-xml</artifactId>
+  <artifactId>spring-boot-mybatis-plus</artifactId>
   <dependencies>
-	  <!-- 实现对 MyBatis 的自动化配置 -->
+	  <!-- 实现对 MyBatis Plus 的自动化配置 -->
         <dependency>
-            <groupId>org.mybatis.spring.boot</groupId>
-            <artifactId>mybatis-spring-boot-starter</artifactId>
-            <version>2.1.1</version>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
+            <version>3.2.0</version>
         </dependency>
   </dependencies>
 </project>

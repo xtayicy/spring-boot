@@ -9,5 +9,23 @@
   <packaging>pom</packaging>
   <modules>
   	<module>spring-boot-mybatis-xml</module>
+  	<module>spring-boot-mybatis-plus</module>
   </modules>
+  <dependencies>
+	  <!-- 实现对数据库连接池的自动化配置 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jdbc</artifactId>
+        </dependency>
+        <dependency> <!-- 本示例，我们使用 MySQL -->
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+        <!-- 方便等会写单元测试 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+  </dependencies>
 </project>
