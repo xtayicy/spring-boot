@@ -35,6 +35,7 @@
 		<module>spring-boot-solr</module>
 		<module>spring-boot-elasticsearch</module>
 		<module>spring-boot-spring-security</module>
+		<module>spring-boot-mybatis</module>
 	</modules>
 
 	<properties>
