@@ -1,0 +1,3 @@
+Unable to load annotation processor factory 'M2_REPO/com/fasterxml/classmate/1.3.4/classmate-1.3.4.jar' for project spring-boot-acutator
+Unable to load annotation processor factory 'M2_REPO/com/fasterxml/jackson/core/jackson-annotations/2.9.0/jackson-annotations-2.9.0.jar' for project spring-boot-acutator
+Unable to load annotation processor factory 'M2_REPO/org/assertj/assertj-core/3.9.1/assertj-core-3.9.1.jar' for project spring-boot-acutator

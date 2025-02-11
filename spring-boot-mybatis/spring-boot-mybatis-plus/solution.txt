@@ -1,0 +1,4 @@
+downloading external resources is disabled
+Failed to read artifact descriptor for jakarta.annotation:jakarta.annotation-api:jar:1.3.5
+Failed to read artifact descriptor for org.slf4j:jul-to-slf4j:jar:1.7.30
+Failed to read artifact descriptor for org.yaml:snakeyaml:jar:1.26
