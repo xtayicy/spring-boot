@@ -37,6 +37,7 @@
 		<module>spring-boot-spring-security</module>
 		<module>spring-boot-mybatis</module>
 		<module>spring-boot-jdbc-template</module>
+		<module>spring-boot-aop-annotation</module>
 	</modules>
 
 	<properties>
