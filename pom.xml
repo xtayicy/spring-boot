@@ -36,6 +36,7 @@
 		<module>spring-boot-elasticsearch</module>
 		<module>spring-boot-spring-security</module>
 		<module>spring-boot-mybatis</module>
+		<module>spring-boot-jdbc-template</module>
 	</modules>
 
 	<properties>

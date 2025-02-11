@@ -1,0 +1,4 @@
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile (default-compile) on project spring-boot-web: Compilation failure
+[ERROR] No compiler is provided in this environment. Perhaps you are running on a JRE rather than a JDK?
+
+mvn install:install-file -Dfile=D:\test\spring-boot-web\spring-boot-web-0.0.1-SNAPSHOT.jar -DgroupId=harry -DartifactId=spring-boot-web -Dversion=0.0.1-SNAPSHOT -Dpackaging=jar -DgeneratePom=true

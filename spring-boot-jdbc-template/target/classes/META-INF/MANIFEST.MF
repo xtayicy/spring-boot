@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Built-By: Lenovo
+Build-Jdk: 17.0.8.1
+Implementation-Title: spring-boot-jdbc-template
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: harry
+Implementation-URL: https://spring.io/projects/spring-boot/spring-boot/s
+ pring-boot-jdbc-template
+Created-By: Maven Integration for Eclipse
+
