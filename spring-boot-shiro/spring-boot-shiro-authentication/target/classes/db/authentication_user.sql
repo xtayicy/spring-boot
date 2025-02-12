@@ -42,3 +42,15 @@ INSERT INTO `authentication_user` (
     NOW(), 
     '1'
 );
+
+INSERT INTO `authentication_user` (
+    `username`, 
+    `password`, 
+    `create_time`, 
+    `status`
+) VALUES (
+    'marry', 
+    'marry', 
+    NOW(), 
+    '1'
+);

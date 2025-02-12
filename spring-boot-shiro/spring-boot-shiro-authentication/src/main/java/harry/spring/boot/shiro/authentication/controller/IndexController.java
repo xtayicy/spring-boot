@@ -56,4 +56,9 @@ public class IndexController {
         model.addAttribute("user", user);
         return "index";
     }
+    
+    @GetMapping("/403")
+    public String forbid() {
+        return "403";
+    }
 }
