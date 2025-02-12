@@ -26,8 +26,8 @@ public class IndexController {
 	
 	@PostMapping("/login")
     @ResponseBody
-    public ResponseBo login(String username, String password) {
-        UsernamePasswordToken token = new UsernamePasswordToken(username, password);
+    public ResponseBo login(String username, String password,Boolean rememberMe) {
+        UsernamePasswordToken token = new UsernamePasswordToken(username, password,rememberMe);
         // 获取Subject对象
         Subject subject = SecurityUtils.getSubject();
         try {
