@@ -4,20 +4,45 @@ import org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreato
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import harry.spring.boot.shiro.authentication.listener.ShiroSessionListener;
 import harry.spring.boot.shiro.authentication.realm.ShiroRealm;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.LinkedHashMap;
 
 import org.apache.shiro.codec.Base64;
 import org.apache.shiro.mgt.SecurityManager;
+import org.apache.shiro.session.SessionListener;
+import org.apache.shiro.session.mgt.SessionManager;
+import org.apache.shiro.session.mgt.eis.MemorySessionDAO;
+import org.apache.shiro.session.mgt.eis.SessionDAO;
 import org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
 import org.apache.shiro.web.mgt.CookieRememberMeManager;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
 import org.apache.shiro.web.servlet.SimpleCookie;
+import org.apache.shiro.web.session.mgt.DefaultWebSessionManager;
 
 @Configuration
 public class ShiroConfig {
+	
+	@Bean
+    public SessionDAO sessionDAO() {
+        MemorySessionDAO sessionDAO = new MemorySessionDAO();
+        return sessionDAO;
+    }
+    
+    @Bean
+    public SessionManager sessionManager() {
+        DefaultWebSessionManager sessionManager = new DefaultWebSessionManager();
+        Collection<SessionListener> listeners = new ArrayList<SessionListener>();
+        listeners.add(new ShiroSessionListener());
+        sessionManager.setSessionListeners(listeners);
+        sessionManager.setSessionDAO(sessionDAO());
+        return sessionManager;
+    }
+    
 	/**
 	 * cookie对象
 	 * @return
@@ -55,6 +80,7 @@ public class ShiroConfig {
         DefaultWebSecurityManager securityManager =  new DefaultWebSecurityManager();
         securityManager.setRealm(shiroRealm());
         securityManager.setRememberMeManager(rememberMeManager());
+        securityManager.setSessionManager(sessionManager());
         
         return securityManager;  
     } 
