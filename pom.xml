@@ -38,6 +38,7 @@
 		<module>spring-boot-mybatis</module>
 		<module>spring-boot-jdbc-template</module>
 		<module>spring-boot-aop-annotation</module>
+		<module>spring-boot-thymeleaf</module>
 	</modules>
 
 	<properties>
