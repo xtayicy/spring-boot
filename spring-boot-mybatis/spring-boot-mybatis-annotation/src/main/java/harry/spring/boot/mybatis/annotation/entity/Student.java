@@ -1,4 +1,4 @@
-package spring.boot.mybatis.annotation.entity;
+package harry.spring.boot.mybatis.annotation.entity;
 
 public class Student {
 	private String no;

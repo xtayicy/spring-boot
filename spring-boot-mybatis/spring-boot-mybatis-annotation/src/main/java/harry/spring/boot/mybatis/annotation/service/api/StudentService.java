@@ -1,6 +1,6 @@
-package spring.boot.mybatis.annotation.service.api;
+package harry.spring.boot.mybatis.annotation.service.api;
 
-import spring.boot.mybatis.annotation.entity.Student;
+import harry.spring.boot.mybatis.annotation.entity.Student;
 
 public interface StudentService {
 	int add(Student student);

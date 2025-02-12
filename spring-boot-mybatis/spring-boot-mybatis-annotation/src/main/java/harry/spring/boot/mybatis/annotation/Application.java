@@ -1,4 +1,4 @@
-package spring.boot.mybatis.annotation;
+package harry.spring.boot.mybatis.annotation;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

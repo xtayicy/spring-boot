@@ -1,14 +1,15 @@
-package spring.boot.mybatis.annotation.mapper;
+package harry.spring.boot.mybatis.annotation.mapper;
 
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
+
+import harry.spring.boot.mybatis.annotation.entity.Student;
+
 import org.apache.ibatis.annotations.Results;
 import org.apache.ibatis.annotations.Result;
-
-import spring.boot.mybatis.annotation.entity.Student;
 
 @Mapper
 public interface StudentMapper {
