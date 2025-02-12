@@ -27,7 +27,6 @@
 		<module>spring-boot-web-freemarker</module>
 		<module>spring-boot-jpa</module>
 		<module>spring-boot-devtools</module>
-		<module>spring-boot-json</module>
 		<module>spring-boot-test</module>
 		<module>spring-boot-plugin</module>
 		<module>spring-boot-mongoDB</module>
@@ -40,6 +39,7 @@
 		<module>spring-boot-aop-annotation</module>
 		<module>spring-boot-thymeleaf</module>
 		<module>spring-boot-redis</module>
+		<module>spring-boot-json</module>
 	</modules>
 
 	<properties>
