@@ -55,3 +55,9 @@ spring:
           filter: 
              stat: 
                log-slow-sql: true
+
+mybatis:
+  # type-aliases扫描路径
+  type-aliases-package: harry.spring.boot.shiro.authentication.mapper
+  # mapper xml实现扫描路径
+  mapper-locations: classpath:mapper/*.xml
