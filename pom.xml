@@ -15,19 +15,15 @@
 
 	<modules>
 		<module>spring-boot-start</module>
-		<module>spring-boot-actuator-custom-security</module>
 		<module>spring-boot-web</module>
 		<module>spring-boot-ant</module>
 		<module>spring-boot-aop</module>
-		<module>spring-boot-actuator</module>
 		<module>spring-boot-data-jpa</module>
 		<module>spring-boot-data-redis</module>
 		<module>spring-boot-data-rest</module>
 		<module>spring-boot-web-jsp</module>
 		<module>spring-boot-web-freemarker</module>
 		<module>spring-boot-jpa</module>
-		<module>spring-boot-devtools</module>
-		<module>spring-boot-test</module>
 		<module>spring-boot-plugin</module>
 		<module>spring-boot-mongoDB</module>
 		<module>spring-boot-neo4j</module>

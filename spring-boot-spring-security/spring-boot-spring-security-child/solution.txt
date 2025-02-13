@@ -1,0 +1,4 @@
+security:
+  basic:
+    enabled: true
+这个配置开启了一个HTTP basic类型的认证，所有服务的访问都必须先过这个认证，默认的用户名为user，密码由Sping Security自动生成，回到IDE的控制台，可以找到密码信息：

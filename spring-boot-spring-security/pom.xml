@@ -24,5 +24,6 @@
   <modules>
   	<module>spring-boot-spring-security-config</module>
   	<module>spring-boot-spring-security-code</module>
+  	<module>spring-boot-spring-security-child</module>
   </modules>
 </project>

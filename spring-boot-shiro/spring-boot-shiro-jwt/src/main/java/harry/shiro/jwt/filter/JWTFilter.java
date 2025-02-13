@@ -25,7 +25,6 @@ public class JWTFilter extends BasicHttpAuthenticationFilter{
     
 	@Override
     protected boolean isAccessAllowed(ServletRequest request, ServletResponse response, Object mappedValue) throws UnauthorizedException {
-        System.out.println("JWTFilter.isAccessAllowed()");
 		HttpServletRequest httpServletRequest = (HttpServletRequest) request;
         SystemProperties properties = SpringContextUtil.getBean(SystemProperties.class);
         String[] anonUrl = StringUtils.splitByWholeSeparatorPreserveAllTokens(properties.getAnonUrl(), ",");
@@ -46,7 +45,6 @@ public class JWTFilter extends BasicHttpAuthenticationFilter{
     protected boolean isLoginAttempt(ServletRequest request, ServletResponse response) {
         HttpServletRequest req = (HttpServletRequest) request;
         String token = req.getHeader(TOKEN);
-        System.out.println("JWTFilter.isLoginAttempt() + token = " + token);
         return token != null;
     }
 

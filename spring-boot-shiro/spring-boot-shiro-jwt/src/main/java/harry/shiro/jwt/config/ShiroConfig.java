@@ -10,11 +10,15 @@ import org.springframework.context.annotation.Configuration;
 import harry.shiro.jwt.filter.JWTFilter;
 import harry.shiro.jwt.realm.ShiroRealm;
 
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
+import java.util.List;
 
 import javax.servlet.Filter;
 
 import org.apache.shiro.mgt.SecurityManager;
+import org.apache.shiro.realm.Realm;
+import org.apache.shiro.realm.text.TextConfigurationRealm;
 
 @Configuration
 public class ShiroConfig {
@@ -29,6 +33,7 @@ public class ShiroConfig {
         DefaultWebSecurityManager securityManager = new DefaultWebSecurityManager();
         // 配置 SecurityManager，并注入 shiroRealm
         securityManager.setRealm(shiroRealm());
+        
         return securityManager;
     }
 	@Bean
