@@ -1,0 +1,5 @@
+system:
+  # 后端免认证接口 url
+  anonUrl: /login
+  # token有效期，单位秒
+  jwtTimeOut: 3600
