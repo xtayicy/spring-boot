@@ -1,5 +1,7 @@
 package harry.shiro.jwt.filter;
 
+import java.io.PrintWriter;
+
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
@@ -50,7 +52,6 @@ public class JWTFilter extends BasicHttpAuthenticationFilter{
 
     @Override
     protected boolean executeLogin(ServletRequest request, ServletResponse response) {
-    	System.out.println("JWTFilter.executeLogin()");
         HttpServletRequest httpServletRequest = (HttpServletRequest) request;
         String token = httpServletRequest.getHeader(TOKEN);
         JWTToken jwtToken = new JWTToken(token);
@@ -80,5 +81,17 @@ public class JWTFilter extends BasicHttpAuthenticationFilter{
         }
         
         return super.preHandle(request, response);
+    }
+    
+    @Override
+    protected boolean onAccessDenied(ServletRequest request, ServletResponse response) throws Exception {
+        HttpServletResponse httpResponse = (HttpServletResponse) response;
+        httpResponse.setStatus(HttpServletResponse.SC_UNAUTHORIZED); // 设置HTTP状态码为401未授权
+        httpResponse.setContentType("application/json");
+        httpResponse.setCharacterEncoding("UTF-8");
+        PrintWriter out = httpResponse.getWriter();
+        out.print("{\"error\":\"Access denied, invalid or missing token,please use postman to validate your request.\"}");
+        out.flush();
+        return false;
     }
 }

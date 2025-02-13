@@ -41,7 +41,9 @@ public class ShiroConfig {
         ShiroFilterFactoryBean shiroFilterFactoryBean = new ShiroFilterFactoryBean();
         // 设置 securityManager
         shiroFilterFactoryBean.setSecurityManager(securityManager);
-
+        
+        shiroFilterFactoryBean.setLoginUrl(null);
+        
         // 在 Shiro过滤器链上加入 JWTFilter
         LinkedHashMap<String, Filter> filters = new LinkedHashMap<>();
         filters.put("jwt", new JWTFilter());
@@ -49,6 +51,7 @@ public class ShiroConfig {
 
         LinkedHashMap<String, String> filterChainDefinitionMap = new LinkedHashMap<>();
         // 所有请求都要经过 jwt过滤器
+        filterChainDefinitionMap.put("/api/login", "anon"); // 登录接口不需要认证
         filterChainDefinitionMap.put("/**", "jwt");
 
         shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainDefinitionMap);

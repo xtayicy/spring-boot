@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import harry.shiro.jwt.entity.Response;
@@ -36,7 +37,7 @@ public class LoginController {
         return userInfo;
     }
 	
-	@PostMapping("/login")
+	@RequestMapping("/login")
     public Response login(String username,String password, HttpServletRequest request) throws Exception {
         username = StringUtils.lowerCase(username);
         password = MD5Util.encrypt(username, password);
