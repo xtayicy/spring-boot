@@ -37,7 +37,7 @@ public class LoginController {
         return userInfo;
     }
 	
-	@RequestMapping("/login")
+	@PostMapping("/login")
     public Response login(String username,String password, HttpServletRequest request) throws Exception {
         username = StringUtils.lowerCase(username);
         password = MD5Util.encrypt(username, password);
