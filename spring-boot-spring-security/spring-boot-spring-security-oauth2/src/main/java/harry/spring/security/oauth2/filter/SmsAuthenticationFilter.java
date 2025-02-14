@@ -1,4 +1,4 @@
-package harry.spring.security.child.filter;
+package harry.spring.security.oauth2.filter;
 
 import java.io.IOException;
 
@@ -14,7 +14,8 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 import org.springframework.security.web.util.matcher.RequestMatcher;
 import org.springframework.util.Assert;
 
-import harry.spring.security.child.authentication.token.SmsAuthenticationToken;
+import harry.spring.security.oauth2.authentication.token.SmsAuthenticationToken;
+
 
 public class SmsAuthenticationFilter extends AbstractAuthenticationProcessingFilter{
 	public static final String MOBILE_KEY = "mobile";
