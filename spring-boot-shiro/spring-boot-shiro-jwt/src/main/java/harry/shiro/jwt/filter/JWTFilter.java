@@ -47,6 +47,7 @@ public class JWTFilter extends BasicHttpAuthenticationFilter{
     protected boolean isLoginAttempt(ServletRequest request, ServletResponse response) {
         HttpServletRequest req = (HttpServletRequest) request;
         String token = req.getHeader(TOKEN);
+        System.out.println("toke = " + token);
         return token != null;
     }
 

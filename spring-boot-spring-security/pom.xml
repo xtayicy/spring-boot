@@ -25,5 +25,6 @@
   	<module>spring-boot-spring-security-config</module>
   	<module>spring-boot-spring-security-code</module>
   	<module>spring-boot-spring-security-child</module>
+  	<module>spring-boot-spring-security-oauth2</module>
   </modules>
 </project>

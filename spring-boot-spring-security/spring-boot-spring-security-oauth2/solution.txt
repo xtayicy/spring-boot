@@ -1,0 +1,13 @@
+http://localhost:8080/oauth/authorize?response_type=code&client_id=test&redirect_uri=http://localhost:8080/hello&scope=all&state=hello
+
+key为Authorization，value为Basic加上client_id:client_secret经过base64加密后的值（可以使用http://tool.chinaz.com/Tools/Base64.aspx）:
+test:test1234
+http://localhost:8080/oauth/token?grant_type=authorization_code&code=s3rwCg&client_id=test&redirect_uri=http://localhost:8080/hello&scope=all
+
+
+key为Authorization，value为Basic加上client_id:client_secret经过base64加密后的值（可以使用http://tool.chinaz.com/Tools/Base64.aspx）:
+test:test1234
+http://localhost:8080/oauth/token?grant_type=password&username=root&password=root&scope=all
+
+key为Authorization，value为bearer加上token
+http://localhost:8080/hello
