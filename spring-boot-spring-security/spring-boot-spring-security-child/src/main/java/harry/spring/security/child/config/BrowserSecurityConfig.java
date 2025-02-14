@@ -14,6 +14,7 @@ import org.springframework.security.web.authentication.rememberme.JdbcTokenRepos
 import org.springframework.security.web.authentication.rememberme.PersistentTokenRepository;
 
 import harry.spring.security.child.custom.password.UserDetailService;
+import harry.spring.security.child.filter.SmsCodeFilter;
 import harry.spring.security.child.filter.ValidateCodeFilter;
 import harry.spring.security.child.handler.CustomAuthenticationFailureHandler;
 
@@ -31,9 +32,16 @@ public class BrowserSecurityConfig extends WebSecurityConfigurerAdapter{
 	@Autowired
     private UserDetailService userDetailService;
 	
+	@Autowired
+    private SmsCodeFilter smsCodeFilter;
+	
+	@Autowired
+    private SmsAuthenticationConfig smsAuthenticationConfig;
+	
 	@Override
     protected void configure(HttpSecurity http) throws Exception {
 		http.addFilterBefore(validateCodeFilter, UsernamePasswordAuthenticationFilter.class) // 添加验证码校验过滤器
+			.addFilterBefore(smsCodeFilter, UsernamePasswordAuthenticationFilter.class)
 			.formLogin() // 表单登录
 	        // http.httpBasic() // HTTP Basic
 	        .loginPage("/login.html") 
@@ -46,10 +54,11 @@ public class BrowserSecurityConfig extends WebSecurityConfigurerAdapter{
             .userDetailsService(userDetailService) // 处理自动登录逻辑
             .and()
 	        .authorizeRequests() // 授权配置
-	        .antMatchers("/login.html","/css/login.css","/code/image").permitAll()
+	        .antMatchers("/login.html","/css/login.css","/code/image","/code/sms").permitAll()
 	        .anyRequest()  // 所有请求
 	        .authenticated()
-	        .and().csrf().disable();; // 都需要认证
+	        .and().csrf().disable()
+	        .apply(smsAuthenticationConfig); // 将短信验证码认证配置加到 Spring Security 中 // 都需要认证
     }
 	
 	@Bean
