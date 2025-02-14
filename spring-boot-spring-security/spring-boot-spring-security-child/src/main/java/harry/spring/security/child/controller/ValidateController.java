@@ -12,16 +12,18 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.context.request.ServletWebRequest;
 import org.springframework.social.connect.web.SessionStrategy;
+import org.springframework.stereotype.Controller;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.social.connect.web.HttpSessionSessionStrategy;
 
 import harry.spring.security.child.entity.ImageCode;
 import harry.spring.security.child.entity.SmsCode;
 
-@RestController
+@Controller
 public class ValidateController {
 	private SessionStrategy sessionStrategy = new HttpSessionSessionStrategy();
 	
@@ -79,6 +81,7 @@ public class ValidateController {
 	}
 
 	@GetMapping("/code/image")
+	@ResponseBody
     public void createCode(HttpServletRequest request, HttpServletResponse response) throws IOException {
         ImageCode imageCode = createImageCode();
         sessionStrategy.setAttribute(new ServletWebRequest(request), SESSION_KEY_IMAGE_CODE, imageCode);
@@ -91,10 +94,12 @@ public class ValidateController {
     }
 	
 	@GetMapping("/code/sms")
-    public void createSmsCode(HttpServletRequest request, HttpServletResponse response, String mobile) throws IOException {
+    public String createSmsCode(HttpServletRequest request, HttpServletResponse response, String mobile) throws IOException {
         SmsCode smsCode = createSMSCode();
         sessionStrategy.setAttribute(new ServletWebRequest(request), SESSION_KEY_SMS_CODE + mobile, smsCode);
         // 输出验证码到控制台代替短信发送服务
         System.out.println("您的登录验证码为：" + smsCode.getCode() + "，有效时间为60秒");
+        
+        return "redirect:/login.html";
     }
 }

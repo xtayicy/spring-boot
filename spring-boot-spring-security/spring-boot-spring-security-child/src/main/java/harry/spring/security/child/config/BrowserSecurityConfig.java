@@ -5,6 +5,7 @@ import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -16,9 +17,11 @@ import org.springframework.security.web.authentication.rememberme.PersistentToke
 import harry.spring.security.child.custom.password.UserDetailService;
 import harry.spring.security.child.filter.SmsCodeFilter;
 import harry.spring.security.child.filter.ValidateCodeFilter;
+import harry.spring.security.child.handler.CustomAuthenticationAccessDeniedHandler;
 import harry.spring.security.child.handler.CustomAuthenticationFailureHandler;
 
 @Configuration
+@EnableGlobalMethodSecurity(prePostEnabled = true)
 public class BrowserSecurityConfig extends WebSecurityConfigurerAdapter{
 	@Autowired
 	private ValidateCodeFilter validateCodeFilter;
@@ -38,9 +41,15 @@ public class BrowserSecurityConfig extends WebSecurityConfigurerAdapter{
 	@Autowired
     private SmsAuthenticationConfig smsAuthenticationConfig;
 	
+	@Autowired
+    private CustomAuthenticationAccessDeniedHandler authenticationAccessDeniedHandler;
+	
 	@Override
     protected void configure(HttpSecurity http) throws Exception {
-		http.addFilterBefore(validateCodeFilter, UsernamePasswordAuthenticationFilter.class) // 添加验证码校验过滤器
+		http.exceptionHandling()
+        	.accessDeniedHandler(authenticationAccessDeniedHandler)
+        	.and()
+			.addFilterBefore(validateCodeFilter, UsernamePasswordAuthenticationFilter.class) // 添加验证码校验过滤器
 			.addFilterBefore(smsCodeFilter, UsernamePasswordAuthenticationFilter.class)
 			.formLogin() // 表单登录
 	        // http.httpBasic() // HTTP Basic
